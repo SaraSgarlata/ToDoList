@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli Task</title>
+    <link rel="stylesheet" type="text/css" href="/css/task-details.css">
+</head>
+<body>
+<h1>Dettagli della Task</h1>
+<p><strong>Nome:</strong> <span th:text="${task.nameTask}"></span></p>
+<p><strong>Descrizione:</strong> <span th:text="${task.description}"></span></p>
+<p><strong>Completato:</strong> <span th:text="${task.done ? 'Sì' : 'No'}"></span></p>
+<p><strong>Data di Scadenza:</strong> <span th:text="${task.expire}"></span></p>
+<a href="/task/all">Torna all'elenco delle Task</a>
+</body>
+</html>

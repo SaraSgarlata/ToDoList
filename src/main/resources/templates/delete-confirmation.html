@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Conferma Eliminazione Task</title>
+    <link rel="stylesheet" type="text/css" href="/css/delete-confirmation.css">
+</head>
+<body>
+<h1>Conferma Eliminazione</h1>
+<p>Sei sicuro di voler eliminare la task <strong th:text="${task.nameTask}"></strong>?</p>
+<form th:action="@{/task/delete/name/{nameTask}(nameTask=${task.nameTask})}" method="post">
+    <button type="submit">Conferma</button>
+</form>
+<a href="/task/all">Annulla</a>
+</body>
+</html>

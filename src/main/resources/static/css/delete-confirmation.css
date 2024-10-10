@@ -1,0 +1,60 @@
+/* Stili di base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Titolo */
+h1 {
+    text-align: center;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+/* Testo di conferma */
+p {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Nome della task */
+strong {
+    color: #6c5ce7;
+}
+
+/* Pulsante di conferma */
+button {
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    font-size: 1.1em;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e74c3c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Link di annullamento */
+a {
+    display: block;
+    text-align: center;
+    color: #6c5ce7;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a:hover {
+    color: #5f27cd;
+}

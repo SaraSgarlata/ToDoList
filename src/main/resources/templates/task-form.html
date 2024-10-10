@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Form</title>
+    <link rel="stylesheet" type="text/css" href="/css/task-form.css">
+</head>
+<body>
+<h1 th:text="${#strings.equals(task.nameTask, null) ? 'Crea nuova Task' : 'Modifica Task'}">Crea nuova Task</h1>
+
+<form th:action="@{/task/new}" th:object="${task}" method="post">
+    <!-- Campo Nome della Task -->
+    <label for="nameTask">Nome della Task:</label>
+    <input type="text" id="nameTask" name="nameTask" th:field="*{nameTask}" required>
+    <br><br>
+
+    <!-- Campo Descrizione -->
+    <label for="description">Descrizione:</label>
+    <textarea id="description" name="description" th:field="*{description}" rows="4" cols="50"></textarea>
+    <br><br>
+
+    <!-- Campo Completato -->
+    <label for="done">Completato:</label>
+    <input type="checkbox" id="done" name="done" th:field="*{done}">
+    <br><br>
+
+    <!-- Campo Data di Scadenza -->
+    <label for="expire">Data di Scadenza:</label>
+    <input type="date" id="expire" name="expire" th:field="*{expire}">
+    <br><br>
+
+    <!-- Pulsante di submit -->
+    <button type="submit" th:text="${#strings.equals(task.nameTask, null) ? 'Crea Task' : 'Salva Modifiche'}"></button>
+</form>
+
+<a href="/task/all">Torna all'elenco delle Task</a>
+</body>
+</html>

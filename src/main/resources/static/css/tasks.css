@@ -1,0 +1,160 @@
+/* tasks.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffde7; /* Giallo chiaro per lo sfondo */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #6c5ce7;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.table-container {
+    width: 90%;
+    margin: 0 auto; /* Centra la tabella */
+}
+
+a.create-task {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: inline-block; /* Mantiene l'allineamento sopra la tabella */
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Contenitore principale */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* scritta under to do */
+h4 {
+    text-align: center;      /* Centra il testo */
+    color: #6A0DAD;          /* Colore viola */
+    font-family: 'Arial', sans-serif; /* Puoi cambiare il font se lo desideri */
+    font-size: 1em;        /* Dimensione del font */
+    margin-top: 20px;        /* Aggiunge uno spazio sopra */
+}
+
+/* Sezione con l'animazione del gattino */
+.cat-animation {
+    display: flex;
+   /* justify-content: center;*/
+    margin-bottom: -90px;
+
+}
+
+.cat-animation img {
+    width: 150px; /* Dimensione del gattino */
+    height: auto;
+    animation: wave 2s infinite; /* Aggiunge un'animazione di 'wave' */
+}
+
+a.create-task:hover {
+    color: #2980b9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #a29bfe;
+}
+
+th {
+    background-color: #a29bfe;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+}
+
+tr:hover {
+    background-color: #dfe6e9;
+}
+
+a {
+    color: #74b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.1em;
+}
+
+a:hover {
+    color: #0984e3;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+table {
+    animation: fadeIn 1s ease-in-out;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #6c5ce7;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #5f27cd;
+    transform: translateY(-3px);
+}
+
+table {
+    border: 2px solid #a29bfe;
+}
+
+
+/* Pulsante per "Crea nuova task" */
+button.create-task {
+    padding: 10px 20px;
+    background-color: #6c5ce7;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    font-size: 1.2em;
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+button.create-task:hover {
+    background-color: #5f27cd;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

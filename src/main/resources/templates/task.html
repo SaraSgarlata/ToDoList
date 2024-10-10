@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Elenco Task</title>
+    <link rel="stylesheet" type="text/css" href="/css/tasks.css">
+</head>
+<body>
+<!-- Sezione con l'animazione del gattino -->
+<div class="cat-animation">
+    <img src="/img/nyan.gif" alt="Gattino che saluta">
+</div>
+<h1>TO DO LIST</h1>
+<h4> Benvenuto, puoi organizzare qui le tue attività</h4>
+
+<div class="table-container">
+
+    <!-- Pulsante per creare una nuova task -->
+    <a th:href="@{/task/new}">
+        <button class="create-task">Crea nuova task</button>
+    </a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrizione</th>
+            <th>Completato</th>
+            <th>Scadenza</th>
+            <th>Azioni</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.nameTask}"></td>
+            <td th:text="${task.description}"></td>
+            <td th:text="${task.done ? 'Sì' : 'No'}"></td>
+            <td th:text="${task.expire}"></td>
+            <td>
+                <a th:href="@{/task/details/{nameTask}(nameTask=${task.nameTask})}">Dettagli</a> |
+                <a th:href="@{/task/edit/{nameTask}(nameTask=${task.nameTask})}">Modifica</a> |
+                <form th:action="@{/task/delete/name/{nameTask}(nameTask=${task.nameTask})}" method="post" style="display:inline;">
+                    <button type="submit">Elimina</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

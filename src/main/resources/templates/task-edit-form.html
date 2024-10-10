@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifica Task</title>
+    <link rel="stylesheet" type="text/css" href="/css/task-edit-form.css">
+</head>
+<body>
+<h1>Modifica Task</h1>
+
+<form th:action="@{/task/edit/{name}(name=${task.nameTask})}" th:object="${task}" method="post">
+    <!-- Campo Nome della Task (Non modificabile) -->
+    <label for="nameTask">Nome della Task (Non modificabile):</label>
+    <input type="text" id="nameTask" name="nameTask" th:field="*{nameTask}" readonly>
+    <br><br>
+
+    <!-- Campo Descrizione -->
+    <label for="description">Descrizione:</label>
+    <textarea id="description" name="description" th:field="*{description}" rows="4" cols="50"></textarea>
+    <br><br>
+
+    <!-- Campo Completato -->
+    <label for="done">Completato:</label>
+    <input type="checkbox" id="done" name="done" th:field="*{done}">
+    <br><br>
+
+    <!-- Campo Data di Scadenza -->
+    <label for="expire">Data di Scadenza:</label>
+    <input type="date" id="expire" name="expire" th:field="*{expire}">
+    <br><br>
+
+    <!-- Pulsante di submit -->
+    <button type="submit">Salva Modifiche</button>
+</form>
+
+<!-- Link per tornare alla lista delle task -->
+<a href="/task/all">Torna all'elenco delle Task</a>
+</body>
+</html>
