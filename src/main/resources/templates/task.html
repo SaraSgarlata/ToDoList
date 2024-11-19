@@ -6,20 +6,28 @@
     <link rel="stylesheet" type="text/css" href="/css/tasks.css">
 </head>
 <body>
-<!-- Sezione con l'animazione del gattino -->
+<!-- Animazione del gattino -->
 <div class="cat-animation">
     <img src="/img/nyan.gif" alt="Gattino che saluta">
 </div>
 <h1>TO DO LIST</h1>
-<h4> Benvenuto, puoi organizzare qui le tue attività</h4>
+<h4>Benvenuto, puoi organizzare qui le tue attività</h4>
+
+<!-- Campo di ricerca -->
+<div class="search-container">
+    <form th:action="@{/task/search}" method="get" style="display: inline-flex; align-items: center;">
+        <input type="text" name="name" placeholder="Cerca per nome" class="search-input">
+        <button type="submit" class="create-task search-button">Cerca</button>
+    </form>
+</div>
+
+
+<!-- Pulsante per creare una nuova task -->
+<a th:href="@{/task/new}">
+    <button class="create-task">Crea nuova task</button>
+</a>
 
 <div class="table-container">
-
-    <!-- Pulsante per creare una nuova task -->
-    <a th:href="@{/task/new}">
-        <button class="create-task">Crea nuova task</button>
-    </a>
-
     <table>
         <thead>
         <tr>

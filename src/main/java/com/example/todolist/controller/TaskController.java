@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -21,6 +23,13 @@ public class TaskController {
     private final TaskService taskService;
     //private final TaskRepository;
 
+    @GetMapping("/search")
+    public String searchTaskByName(@RequestParam("name") String name, Model model) throws BadRequestException {
+        List<TaskDto> tasks = (List<TaskDto>) Collections.singletonList(taskService.getTaskByName(name));  // Utilizza il metodo del servizio
+        model.addAttribute("tasks", tasks);  // Aggiungi i risultati al model
+        return "task";  // Ritorna la vista della lista delle task
+    }
+
     // Visualizza il form di creazione di una nuova task
     @GetMapping("/new")
     public String createTaskForm(Model model) {
@@ -28,16 +37,12 @@ public class TaskController {
         return "task-form";  // Restituisce "task-form.html"
     }
 
-
-
     // Gestisce la creazione di una nuova task
     @PostMapping("/new")
     public String createTask(@ModelAttribute TaskDto taskDto) {
         taskService.createNewTask(taskDto);
         return "redirect:/task/all";  // Redirige alla lista di tutte le task
     }
-
-
 
     /* Metodo per aggiornare lo stato "Completato" di una task
     public void updateTaskCompletion(String nameTask, boolean done) throws BadRequestException {
@@ -51,9 +56,6 @@ public class TaskController {
             throw new BadRequestException("Task not found with name: " + nameTask);
         }
     }
-
-
-
 
     @PostMapping("/complete/{name}")
     public String completeTask(@PathVariable String name, @RequestParam("done") boolean done) throws BadRequestException {

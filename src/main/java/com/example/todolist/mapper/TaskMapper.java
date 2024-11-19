@@ -15,9 +15,6 @@ public interface TaskMapper {
     @Mapping(target = "done",source ="done")
     @Mapping(target = "expire",source ="expire")
     TaskDB taskDtoToTaskDB(TaskDto taskDto);
-
-    //  TaskDB a TaskDto
-
     @Mapping(target = "nameTask", source ="nameTask" )
     @Mapping(target = "description",source ="description")
     @Mapping(target = "done",source ="done")

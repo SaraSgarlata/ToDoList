@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface TaskRepository extends Neo4jRepository<TaskDB, Long> {
+
     Optional<TaskDB> findByNameTask(String nameTask);
 
     void deleteByNameTask(String nameTask);
